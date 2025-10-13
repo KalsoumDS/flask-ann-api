@@ -12,12 +12,12 @@ python app/app.py
 
 ## Docker
 ```bash
-docker build -t flask-ann-api .
-docker run -p 5000:5000 flask-ann-api
+docker build -t flask-ann-simple .
+docker run -p 5000:5000 flask-ann-simple
 ```
 
 ## GitHub
-1. Crée un repo `flask-ann-api` sur GitHub (sans README).
+1. Crée un repo `flask-ann-simple` sur GitHub (sans README).
 2. Configure les secrets Actions:
    - `DOCKERHUB_USERNAME`
    - `DOCKERHUB_TOKEN`
