@@ -23,4 +23,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/flask-ann-api:latest
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/flask-ann-api:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/flask-ann-simple:latest
