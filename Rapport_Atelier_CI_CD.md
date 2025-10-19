@@ -145,18 +145,45 @@ docker pull oumou08/flask-ann-api:latest
 # docker run --rm -p 5001:5000 oumou08/flask-ann-api:latest
 ```
 
-### 8.2 Liens
-- Dépôt GitHub: https://github.com/KalsoumDS/flask-ann-api
-- Docker Hub (namespace utilisateur): https://hub.docker.com/u/oumou08
-- Répertoire image (après premier push): https://hub.docker.com/r/oumou08/flask-ann-api
+### 8.2 Liens essentiels
+- **Dépôt GitHub principal:** https://github.com/KalsoumDS/flask-ann-api
+- **Onglet Actions (workflows):** https://github.com/KalsoumDS/flask-ann-api/actions
+- **Docker Hub (profil utilisateur):** https://hub.docker.com/u/oumou08
+- **Image Docker Hub:** https://hub.docker.com/r/oumou08/flask-ann-api
+- **Docker Hub (tags):** https://hub.docker.com/r/oumou08/flask-ann-api/tags
+- **Secrets GitHub (Settings):** https://github.com/KalsoumDS/flask-ann-api/settings/secrets/actions
 
-### 8.3 Captures (à insérer par l'étudiant)
-1) Terminal: `git init`, premier commit
-2) Page GitHub du dépôt vide puis après push
-3) Build Docker local OK
-4) Test `/ping` en local
-5) Secrets GitHub créés (noms masqués)
-6) Workflow Actions: Success
-7) Docker Hub: image `flask-ann-api:latest`
-8) Pull/run depuis Docker Hub et `/ping`
+### 8.3 Captures obligatoires (à insérer par l'étudiant)
+
+**Étape 1 - Initialisation Git :**
+- Capture 1: Terminal montrant `git init`, `git add .`, `git commit -m "Initialisation du projet Flask avec Docker"`
+- Capture 2: Terminal montrant `git status` et la structure des fichiers créés
+
+**Étape 2 - Dépôt GitHub :**
+- Capture 3: Page GitHub du dépôt vide `flask-ann-api` (avant le push)
+- Capture 4: Page GitHub du dépôt après le push (avec tous les fichiers visibles)
+
+**Étape 3 - Docker local :**
+- Capture 5: Terminal montrant `docker build -t flask-ann-api .` (succès)
+- Capture 6: Terminal montrant `docker run -p 5000:5000 flask-ann-api` (démarrage)
+- Capture 7: Navigateur/Postman montrant `http://127.0.0.1:5000/ping` → `{"status":"ok"}`
+
+**Étape 4 - Secrets GitHub :**
+- Capture 8: Page GitHub Settings → Secrets and variables → Actions (avec DOCKERHUB_USERNAME et DOCKERHUB_TOKEN créés, valeurs masquées)
+
+**Étape 5 - Workflow CI/CD :**
+- Capture 9: Onglet Actions du dépôt GitHub montrant le workflow "Build & Push Docker Image"
+- Capture 10: Détail du run Actions avec toutes les étapes vertes (Checkout → Login → Build → Push)
+
+**Étape 6 - Docker Hub :**
+- Capture 11: Page Docker Hub montrant l'image `oumou08/flask-ann-api:latest` publiée
+- Capture 12: Terminal montrant `docker pull oumou08/flask-ann-api:latest` (succès)
+
+**Étape 7 - Test final :**
+- Capture 13: Terminal montrant `docker run --rm -e PORT=5002 -p 5002:5002 oumou08/flask-ann-api:latest`
+- Capture 14: Navigateur montrant `http://127.0.0.1:5002/ping` → `{"status":"ok"}`
+
+**Étape 8 - Structure du projet :**
+- Capture 15: Explorateur de fichiers montrant la structure complète du projet
+- Capture 16: Contenu du fichier `.github/workflows/docker-image.yml`
 
