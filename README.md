@@ -13,7 +13,13 @@ python app/app.py
 ## Docker
 ```bash
 docker build -t flask-ann-api .
-docker run -p 5000:5000 flask-ann-api
+# Par défaut (port 5000):
+docker run --rm -p 5000:5000 flask-ann-api
+
+# Si le port 5000 est occupé, utilisez la variable d'environnement PORT
+# et mappez le même port côté hôte:
+docker run --rm -e PORT=5002 -p 5002:5002 flask-ann-api
+# Puis ouvrez http://127.0.0.1:5002/ping
 ```
 
 ## GitHub
@@ -25,3 +31,15 @@ docker run -p 5000:5000 flask-ann-api
 
 ## CI/CD
 Le workflow construit et pousse l'image sur Docker Hub avec le tag `latest`.
+
+Image publiée: `oumou08/flask-ann-api:latest`
+
+Exécution depuis Docker Hub:
+```bash
+docker pull oumou08/flask-ann-api:latest
+# Port par défaut (5000)
+docker run --rm -p 5000:5000 oumou08/flask-ann-api:latest
+# Ou avec PORT personnalisé
+docker run --rm -e PORT=5002 -p 5002:5002 oumou08/flask-ann-api:latest
+# http://127.0.0.1:5002/ping
+```
