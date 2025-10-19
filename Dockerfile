@@ -20,6 +20,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy app code
 COPY app /app/app
 
-# Expose port and run
-EXPOSE 5000
-CMD ["gunicorn", "-w", "2", "-b", "0.0.0.0:5000", "app.app:app"]
+# Expose port (default 5000) and run with dynamic port
+ENV PORT=5000
+EXPOSE ${PORT}
+CMD ["/bin/sh", "-c", "gunicorn -w 2 -b 0.0.0.0:${PORT} app.app:app"]
