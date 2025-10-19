@@ -4,3 +4,8 @@ __pycache__/
 .env
 *.log
 .DS_Store
+
+# Fichiers d'atelier (gardés localement uniquement)
+Rapport_Atelier_CI_CD.md
+Atelier_CI_CD.pdf
+Atelier_CI_CD.txt
